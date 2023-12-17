@@ -18,4 +18,8 @@ if __name__ == '__main__':
 
             if 0 <= channel <= 15 and 0 <= on_value <= 4095 and 0 <= off_value <= 4095:
                 pwm.setPWM(channel, on_value, off_value)
-                print(f"Set PWM values for channel {channel}: 'on' = {on_value}, 'off' = {off_value}
+                print(f"Set PWM values for channel {channel}: 'on' = {on_value}, 'off' = {off_value}")
+            else:
+                print("Invalid input. Channel should be between 0 and 15, and values should be between 0 and 4095.")
+    except KeyboardInterrupt:
+        print("\nExiting the program.")
