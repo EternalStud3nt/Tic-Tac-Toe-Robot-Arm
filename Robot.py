@@ -18,6 +18,6 @@ if __name__ == '__main__':
                 pwm.setServoPulse(channel, pulse)
                 print(f"Set pulse {pulse}us for channel {channel}.")
             else:
-                print("Invalid input. Channel should be between 0 and 15, and values should be between 0 and 4095.")
+                print("Invalid input. Channel should be between 0 and 15")
     except KeyboardInterrupt:
         print("\nExiting the program.")
