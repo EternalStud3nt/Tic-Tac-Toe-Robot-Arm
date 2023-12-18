@@ -9,16 +9,14 @@ if __name__ == '__main__':
     try:
         while True:
             channel_input = input("Enter channel number (0-15): ")
-            on_input = input("Enter 'on' value (0-4095): ")
-            off_input = input("Enter 'off' value (0-4095): ")
+            pulse_input = input("Enter pulse width (500 - 2500): ")
 
             channel = int(channel_input)
-            on_value = int(on_input)
-            off_value = int(off_input)
+            pulse = int(pulse_input)
 
-            if 0 <= channel <= 15 and 0 <= on_value <= 4095 and 0 <= off_value <= 4095:
-                pwm.setPWM(channel, on_value, off_value)
-                print(f"Set PWM values for channel {channel}: 'on' = {on_value}, 'off' = {off_value}")
+            if 0 <= channel <= 15:
+                pwm.setServoPulse(channel, pulse)
+                print(f"Set pulse {pulse}us for channel {channel}.")
             else:
                 print("Invalid input. Channel should be between 0 and 15, and values should be between 0 and 4095.")
     except KeyboardInterrupt:
